@@ -9,6 +9,7 @@ description: >-
   laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
   nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
   commodo consequat.
+image: /img/products-full-width.jpg
 tags:
   - toto
   - vélo
