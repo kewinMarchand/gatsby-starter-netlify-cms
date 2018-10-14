@@ -1,40 +1,61 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import React from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'gatsby';
+import {
+  withStyles,
+  AppBar, 
+  Grid, 
+  Hidden,
+  Toolbar, 
+  Typography
+} from '@material-ui/core';
+import { fade } from '@material-ui/core/styles/colorManipulator';
+import TopBar from './TopBar';
 
-const Navbar = () => (
-  <nav className="navbar is-transparent">
-    <div className="container">
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
-          <figure className="image">
-            <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-          </figure>
-        </Link>
-      </div>
-      <div className="navbar-start">
-        <Link className="navbar-item" to="/about">
-          About
-        </Link>
-        <Link className="navbar-item" to="/products">
-          Products
-        </Link>
-      </div>
-      <div className="navbar-end">
-        <a
-          className="navbar-item"
-          href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <img src={github} alt="Github" />
-          </span>
-        </a>
-      </div>
-    </div>
-  </nav>
-)
+const styles = theme => ({
+  nav: {
+    width: '100%',
+  },
+  title: {
+    marginLeft: theme.spacing.unit * 2,
+  },
+});
 
-export default Navbar
+class NavBar extends React.Component {
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+        <React.Fragment >
+            <AppBar component="nav" elevation={10} color="default">
+              <Hidden smDown >
+                  <TopBar />
+              </Hidden>
+                <Toolbar>
+                  <Grid item >
+                    <Link to="/" >
+                      <img src="./img/logo_srh_512x512.png" alt="logo srh compétences" height="96" />  
+                    </Link>
+                  </Grid>
+                  <Typography 
+                      className={classes.title} 
+                      variant="h6" 
+                      color="inherit" 
+                  >
+                      SRH Compétences
+                  </Typography>
+                  <Grid item className={classes.grow}></Grid>
+                </Toolbar>
+            </AppBar>
+        </React.Fragment>
+    );
+  }
+}
+
+NavBar.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(NavBar);
+
