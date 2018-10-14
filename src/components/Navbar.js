@@ -9,9 +9,8 @@ import {
   Toolbar, 
   Typography
 } from '@material-ui/core';
-import { fade } from '@material-ui/core/styles/colorManipulator';
 import TopBar from './TopBar';
-
+import logo from '../img/logo_srh_512x512.png'
 const styles = theme => ({
   nav: {
     width: '100%',
@@ -35,7 +34,7 @@ class NavBar extends React.Component {
                 <Toolbar>
                   <Grid item >
                     <Link to="/" >
-                      <img src="./img/logo_srh_512x512.png" alt="logo srh compétences" height="96" />  
+                      <img src={logo} alt="logo srh compétences" style={{maxHeight: 96}} />  
                     </Link>
                   </Grid>
                   <Typography 

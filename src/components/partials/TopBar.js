@@ -6,7 +6,6 @@ import {
     IconButton, 
     Typography
 } from '@material-ui/core';
-import datadocke from '../img/icone_datadocke_NB.jpg'
 
 const styles = theme => ({
     topbar: {
@@ -58,7 +57,7 @@ class TopBar extends React.Component {
                             </IconButton>   
                         </a>
                         <IconButton aria-label="linkedin">
-                            <img src={datadocke} height="30" alt="icon-datadock" aria-hidden="true"/>
+                            <img src="./assets/icone_datadocke_NB.jpg" height="30" alt="icon-datadock" aria-hidden="true"/>
                         </IconButton>    
                     </Grid>
                 </Grid>
