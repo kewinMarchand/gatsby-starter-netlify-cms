@@ -45,12 +45,12 @@ class CollapseCard extends React.Component {
             <Card elevation={10} className={classes.card}>
                 <CardContent>
                     <Grid container spacing={24}>
-                        <Grid item xs={12} md={2} align="center">
+                        <Grid item xs={12} md={3} align="center">
                             <Paper className={classes.paper}>
                                 <i className={` ${classes.icon} fa fa-4x fa-${icon} `} aria-hidden="true"/>
                             </Paper>
                         </Grid>
-                        <Grid item xs={12} md={10}>
+                        <Grid item xs={12} md={9}>
                             <Typography variant="body2" align="left" gutterBottom>
                                 {title}
                             </Typography>
@@ -67,8 +67,8 @@ class CollapseCard extends React.Component {
                 </CardContent>
                 <CardActions className={classes.actionContainer}>
                     <Grid container spacing={24}>
-                        <Grid item xs={12} md={2}/>
-                        <Grid item xs={12} md={10} align={isWidthUp('md', width) ? "left" : "center"}>
+                        <Grid item xs={12} md={3}/>
+                        <Grid item xs={12} md={9} align={isWidthUp('md', width) ? "left" : "center"}>
                             <Button variant="contained" color="primary" 
                                 className={classes.cta} 
                                 aria-label={!checked ? 'En savoir plus' : 'Réduire' } 

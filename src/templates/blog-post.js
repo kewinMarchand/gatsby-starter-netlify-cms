@@ -12,6 +12,7 @@ export const BlogPostTemplate = ({
   description,
   tags,
   title,
+  image,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
@@ -22,6 +23,7 @@ export const BlogPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
+          <img src={image} alt={title} />
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
@@ -51,6 +53,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  image: PropTypes.string,
   helmet: PropTypes.instanceOf(Helmet),
 }
 
@@ -59,6 +62,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
+      {post.frontmatter.image}
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
@@ -66,6 +70,7 @@ const BlogPost = ({ data }) => {
         helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        image={post.frontmatter.image}
       />
     </Layout>
   )
@@ -85,9 +90,10 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         title
+        date(formatString: "MMMM DD, YYYY")
         description
+        image
         tags
       }
     }

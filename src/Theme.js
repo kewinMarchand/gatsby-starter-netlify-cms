@@ -20,7 +20,7 @@ const palette = {
         grey: '#EDEDED',
         darkgrey: '#CDCDCD',
         dark: '#3D3D3D',
-        gradient: 'linear-gradient(to bottom, #EDEDED, #CDCDCD)',
+        gradient: 'linear-gradient(to bottom, #FFFFFF, #EDEDED)',
         overlay: 'rgba(0, 0, 0, 0.3)',
     },
 }
@@ -78,15 +78,18 @@ export default createMuiTheme({
         danger: 'orange',
     },
     typography: {
-        htmlFontSize: 10,
+        fontFamily: '"Roboto", sans-serif',
         useNextVariants: true,
         body1: {
-            fontSize: '1.4rem',
+            fontSize: '1rem',
         },
         body2: {
             fontSize: '1.6rem',
             fontWeight: 700,
         },
+        h2: {
+            fontFamily: '"Roboto", "Arial", serif',
+        }
       },
     overrides: {
         MuiAppBar: {

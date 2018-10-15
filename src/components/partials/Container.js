@@ -21,22 +21,28 @@ const styles = theme => ({
 class Container extends React.Component {
 
   render() {
-    const {classes, id, children, bgImage, bgColor, overlay, stickyNav} = this.props;
+    const {classes, id, children, bgImage, bgColor, overlay, stickyNav, alignItems} = this.props;
 
     return (
-        <Grid id={id} container className={classes.container} 
+        <Grid id={id} container 
+            className={classes.container} 
             style={{
                 background:  bgImage ? 'url(' + bgImage + ') 50% 50% / cover ' : null,
                 backgroundColor: bgColor ? palette.background[bgColor] : palette.background.default,
                 marginTop: stickyNav ? (isWidthUp('md') ? 170 : 115) : 0,
             }}
          >
-            <Grid container className={classes.overlay} 
+            <Grid container 
+                className={classes.overlay} 
                 style={{
                     background: overlay ? palette.background.overlay : null,
                 }}
             >
-                <Grid container className={classes.wrapper} spacing={24} alignItems="center">
+                <Grid container 
+                    className={classes.wrapper} 
+                    spacing={24} 
+                    alignItems={alignItems ? alignItems : "flex-start"}
+                >
                     {children}
                 </Grid>
             </Grid>
@@ -56,6 +62,7 @@ Container.propTypes = {
     overlay: PropTypes.bool,
     id: PropTypes.string,
     stickyNav: PropTypes.bool,
+    alignItems: PropTypes.string,
 };
 
 export default compose(

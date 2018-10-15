@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import {withStyles, Button, Card, CardContent, CardActions, Grid, Typography} from '@material-ui/core';
+import LinkedinLink from './utils/LinkedinLink'
 
 const styles = theme => ({
     media: {
@@ -43,7 +43,7 @@ class NewsCard extends React.Component {
                                 </Typography> 
                             </Grid>
                             <Grid item xs={12}>
-                                <i className={` ${classes.icon} fa fa-3x  fa-linkedin-square `} aria-hidden="true"/> 
+                                <LinkedinLink />
                             </Grid>
                             <Grid item xs={12}>
                                 <Link className="button is-small" to={post.fields.slug}>

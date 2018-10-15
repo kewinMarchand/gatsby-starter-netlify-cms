@@ -9,7 +9,7 @@ class Banner extends React.Component {
   render() {
 
     return (
-        <Container bgColor="primary">
+        <Container bgColor="primary" alignItems="center">
             <Grid item xs={8}>
                 <Typography variant="h5" align="left" color="inherit">
                     Nous contacter pour connaître nos programmes et tarifs

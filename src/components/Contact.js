@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import {withStyles, Button, Grid, OutlinedInput, InputLabel, NativeSelect, Paper, TextField} from '@material-ui/core';
 import Container from './partials/Container';
 import SectionHeader from './partials/SectionHeader';
+import background from '../img/canstockphoto8777851-valid.jpg'
 
 const styles = theme => ({
     formContainer: {
@@ -47,7 +48,7 @@ class Contact extends React.Component {
         const { classes } = this.props;
 
         return (
-            <Container id="contact" bgImage="./assets/canstockphoto8777851-valid.jpg" overlay>
+            <Container id="contact" bgImage={background} overlay>
                 <SectionHeader 
                     title="Contactez-nous" 
                     subtitle="pour connaître nos programmes et tarifs"

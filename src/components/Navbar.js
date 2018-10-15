@@ -11,6 +11,7 @@ import {
 } from '@material-ui/core';
 import TopBar from './TopBar';
 import logo from '../img/logo_srh_512x512.png'
+
 const styles = theme => ({
   nav: {
     width: '100%',
