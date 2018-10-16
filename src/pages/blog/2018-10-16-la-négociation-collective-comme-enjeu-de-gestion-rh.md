@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: La négociation collective comme enjeu de gestion RH
-date: 2018-10-15T20:03:47.014Z
+date: 2017-12-24T20:03:47.014Z
 description: 'La négociation, comme outil de flexibilité pour les entreprises'
 image: /img/canstockphoto15804286.jpg
 tags:
