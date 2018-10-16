@@ -46,10 +46,11 @@ class IndexPage extends React.Component {
                         </Link>
                         <CardContent>
                             <Link to={post.fields.slug}>
-                                <Typography variant="h6" gutterBottom>
+                                <Typography variant="h6" >
                                     {post.frontmatter.title}
-                                    <span> &bull; </span>
-                                    <small>{post.frontmatter.date}</small>
+                                </Typography> 
+                                <Typography variant="caption" align="right" gutterBottom >
+                                      Le {post.frontmatter.date}
                                 </Typography> 
                             </Link>
                             <Typography variant="body1" gutterBottom>
@@ -59,7 +60,7 @@ class IndexPage extends React.Component {
                                 <Grid container>
                                     <Grid item xs={12}>
                                         <Typography variant="body1" gutterBottom>
-                                            Partagez sur Linkedin
+                                            Partagez sur Linkedin 
                                         </Typography> 
                                     </Grid>
                                     <Grid item xs={12}>
@@ -113,9 +114,8 @@ export const pageQuery = graphql`
           frontmatter {
             title
             templateKey
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD MMMM YYYY")
             image  
-          
           }
         }
       }

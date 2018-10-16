@@ -41,30 +41,30 @@ const spacing = {
 
 const shadows = [
     'none',
-    '0px 1px 2px -1px   rgba(0,84,164,0.10)',
-    '0px 1px 2px 0px    rgba(0,84,164,0.10)',
-    '0px 2px 4px -1px   rgba(0,84,164,0.12)',
-    '0px 2px 4px 0px    rgba(0,84,164,0.12)',
-    '0px 3px 6px -1px   rgba(0,84,164,0.14)',
-    '0px 3px 6px 0px    rgba(0,84,164,0.14)',
-    '0px 4px 8px -1px   rgba(0,84,164,0.16)',
-    '0px 4px 8px 0px    rgba(0,84,164,0.16)',
-    '0px 5px 10px -1px  rgba(0,84,164,0.18)',
-    '0px 5px 10px 0px   rgba(0,0,0,0.18)',
-    '0px 6px 12px -1px  rgba(0,84,164,0.20)',
-    '0px 6px 12px 0px   rgba(0,84,164,0.20)',
-    '0px 7px 14px -1px  rgba(0,84,164,0.22)',
-    '0px 7px 14px 0px   rgba(0,84,164,0.22)',
-    '0px 8px 16px -1px  rgba(0,84,164,0.24)',
-    '0px 8px 16px 0px   rgba(0,84,164,0.24)',
-    '0px 9px 18px -1px  rgba(0,84,164,0.26)',
-    '0px 9px 18px 0px   rgba(0,84,164,0.26)',
-    '0px 10px 20px -1px rgba(0,84,164,0.28)',
-    '0px 10px 20px 0px  rgba(0,84,164,0.28)',
-    '0px 11px 22px -1px rgba(0,84,164,0.30)',
-    '0px 11px 22px 0px  rgba(0,84,164,0.30)',
-    '0px 12px 24px -1px rgba(0,84,164,0.32)',
-    '0px 12px 24px 0px  rgba(0,84,164,0.32)',
+    '0px 1px 2px -1px   rgba(0,0,0,0.18)',
+    '0px 2px 4px 0px    rgba(0,0,0,0.18)',
+    '0px 3px 6px -1px   rgba(0,0,0,0.18)',
+    '0px 2px 4px 0px    rgba(0,0,0,0.18)',
+    '0px 4px 8px -1px   rgba(0,0,0,0.18)',
+    '0px 2px 4px 0px    rgba(0,0,0,0.18)',
+    '0px 2px 4px 0px    rgba(0,0,0,0.18)',
+    '0px 3px 6px -1px   rgba(0,0,0,0.18)',
+    '0px 2px 4px 0px    rgba(0,0,0,0.18)',
+    '0px 4px 8px -1px   rgba(0,0,0,0.18)',
+    '0px 2px 4px 0px    rgba(0,0,0,0.18)',
+    '0px 6px 12px 0px   rgba(0,0,0,0.18)',
+    '0px 2px 4px 0px    rgba(0,0,0,0.18)',
+    '0px 3px 6px -1px   rgba(0,0,0,0.18)',
+    '0px 2px 4px 0px    rgba(0,0,0,0.18)',
+    '0px 4px 8px -1px   rgba(0,0,0,0.18)',
+    '0px 2px 4px 0px    rgba(0,0,0,0.18)',
+    '0px 9px 18px 0px   rgba(0,0,0,0.18)',
+    '0px 2px 4px 0px    rgba(0,0,0,0.18)',
+    '0px 3px 6px -1px   rgba(0,0,0,0.18)',
+    '0px 2px 4px 0px    rgba(0,0,0,0.18)',
+    '0px 4px 8px -1px   rgba(0,0,0,0.18)',
+    '0px 2px 4px 0px    rgba(0,0,0,0.18)',
+    '0px 12px 24px 0px  rgba(0,0,0,0.18)',
 ]
 
 export {palette}
@@ -78,8 +78,8 @@ export default createMuiTheme({
         danger: 'orange',
     },
     typography: {
-        fontFamily: '"Roboto", sans-serif',
         useNextVariants: true,
+        fontFamily: '"Roboto", sans-serif',
         body1: {
             fontSize: '1rem',
         },
@@ -95,6 +95,10 @@ export default createMuiTheme({
         MuiAppBar: {
             colorPrimary: {
                 backgroundColor: 'transparent',
+                transition: 'all .5s',
+            },
+            colorDefault: {
+                transition: 'all .5s',
             },
         },
         MuiButton: {
@@ -114,10 +118,18 @@ export default createMuiTheme({
                 marginTop: spacing.unit,
             }
         },
+        MuiPaper: {
+            root: {
+                transition: 'all .5s',
+            },
+        },
         MuiToolbar: {
             root: {
                 marginBottom: spacing.unit,
                 marginTop: spacing.unit,
+            },
+            regular: {
+                transition: 'all .8s',
             }
         },
         MuiTooltip: {

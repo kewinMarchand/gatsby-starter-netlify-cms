@@ -6,8 +6,6 @@ import {CssBaseline} from '@material-ui/core';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-import './all.sass'
-
 const TemplateWrapper = ({ children }) => (
   <React.Fragment>
     <MuiThemeProvider theme={theme}>

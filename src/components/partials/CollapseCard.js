@@ -30,19 +30,33 @@ const styles = theme => ({
 
 class CollapseCard extends React.Component {
     state = {
-        checked: false,
-      };
+    checked: false,
+    hover: false
+    };
     
-      handleChange = () => {
+    handleChange = () => {
         this.setState(state => ({ checked: !state.checked }));
-      };
+    };
+
+    cardEnter = () => {
+        this.setState(state => ({ hover: true }));
+    }
+
+    cardLeave = () => {
+        this.setState(state => ({ hover: false }));
+    }
     
     render() {
         const {classes, width, icon, title, excerpt, content} = this.props;
-        const {checked } = this.state;
+        const {checked, hover} = this.state;
 
         return (
-            <Card elevation={10} className={classes.card}>
+            <Card 
+                elevation={hover ? 24 : 3}
+                onMouseEnter={this.cardEnter}
+                onMouseLeave={this.cardLeave} 
+                className={classes.card}
+            >
                 <CardContent>
                     <Grid container spacing={24}>
                         <Grid item xs={12} md={3} align="center">

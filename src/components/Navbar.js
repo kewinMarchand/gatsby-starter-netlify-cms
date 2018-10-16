@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby'
 import {
   withStyles,
   AppBar, 
@@ -27,16 +27,15 @@ class NavBar extends React.Component {
   }
 
   updateScroll() {
-      let nav = document.getElementById('nav'),
-      navHeight = nav.clientHeight
-      console.log( window.scrollY)
-      if (navHeight < window.scrollY) {
+      let windowHeight = window.innerHeight
+
+      if (windowHeight < window.scrollY) {
         this.setState({
-          scrolled: false,
+          scrolled: true,
         })
       } else {
         this.setState({
-          scrolled: true,
+          scrolled: false,
         })
       }  
   }
@@ -56,14 +55,17 @@ class NavBar extends React.Component {
 
     return (
         <React.Fragment >
-            <AppBar component="nav" elevation={10}  color={scrolled ? "primary" : "default"} id="nav">
-              <Hidden smDown >
+            <AppBar component="nav" elevation={10} color={scrolled ? "default" : "primary"} >
+              {
+                !scrolled &&
+                <Hidden smDown >
                   <TopBar />
-              </Hidden>
+                </Hidden>
+              }
                 <Toolbar>
                   <Grid item >
                     <Link to="/" >
-                      <img src={logo} alt="logo srh compétences" style={{maxHeight: 96}} />  
+                      <img src={logo} alt="logo srh compétences" style={{height: scrolled ? 56 : 96, transition: 'all .8s'}} />  
                     </Link>
                   </Grid>
                   <Typography 
@@ -73,7 +75,9 @@ class NavBar extends React.Component {
                   >
                       SRH Compétences
                   </Typography>
-                  <Grid item className={classes.grow}></Grid>
+                  <Grid item className={classes.grow}>
+  
+                  </Grid>
                 </Toolbar>
             </AppBar>
         </React.Fragment>
@@ -86,4 +90,3 @@ NavBar.propTypes = {
 };
 
 export default withStyles(styles)(NavBar);
-
