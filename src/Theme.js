@@ -94,7 +94,7 @@ export default createMuiTheme({
     overrides: {
         MuiAppBar: {
             colorPrimary: {
-
+                backgroundColor: 'transparent',
             },
         },
         MuiButton: {

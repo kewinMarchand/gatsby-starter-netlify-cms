@@ -31,7 +31,7 @@ class Jumbotron extends React.Component {
     const { classes, width } = this.props;
 
     return (
-        <Container bgImage={headerImage} overlay>
+        <Container bgImage={headerImage} overlay id="jumbotron">
             <Grid item xs={12}>
                 <Card className={classes.card}>
                     <CardContent>

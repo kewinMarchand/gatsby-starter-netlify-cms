@@ -22,13 +22,41 @@ const styles = theme => ({
 });
 
 class NavBar extends React.Component {
+  state = {
+    scrolled: false,
+  }
+
+  updateScroll() {
+      let nav = document.getElementById('nav'),
+      navHeight = nav.clientHeight
+      console.log( window.scrollY)
+      if (navHeight < window.scrollY) {
+        this.setState({
+          scrolled: false,
+        })
+      } else {
+        this.setState({
+          scrolled: true,
+        })
+      }  
+  }
+
+  componentDidMount() {
+    this.updateScroll()
+    window.addEventListener('scroll', this.updateScroll.bind(this))
+  }
+
+  componentWillUnmount() {
+      window.removeEventListener('scroll', this.updateScroll.bind(this))
+  }
 
   render() {
     const { classes } = this.props;
+    const { scrolled } = this.state;
 
     return (
         <React.Fragment >
-            <AppBar component="nav" elevation={10} color="default">
+            <AppBar component="nav" elevation={10}  color={scrolled ? "primary" : "default"} id="nav">
               <Hidden smDown >
                   <TopBar />
               </Hidden>
